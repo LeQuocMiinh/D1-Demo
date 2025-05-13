@@ -6,9 +6,9 @@
   "scripts": {
     "common": "pnpm --filter @packages/common",
     "packages:build": "pnpm run common build",
-    "d1-demo": "pnmpm --filter @apps/d1-demo",
-    "start:dev": "pnpm run d1-demo run dev",
-    "start:local": "pnpm run d1-demo run local",
+    "d1-demo": "pnpm --filter @apps/d1-demo",
+    "start:dev": "pnpm run d1-demo dev",
+    "start:local": "pnpm run d1-demo local",
     "deploy:d1-demo": "pnpm run d1-demo run deploy"
   },
   "keywords": [],

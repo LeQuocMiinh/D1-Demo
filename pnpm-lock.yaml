@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  apps/drizzle-d1-demo:
+  apps/d1-demo:
     dependencies:
       drizzle-orm:
         specifier: ^0.43.1
