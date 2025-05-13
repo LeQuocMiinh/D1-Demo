@@ -1,7 +1,7 @@
 import { Context } from 'hono';
 
 export interface Env {
-	drizzleDemo: D1Database;
+	DB: D1Database;
 }
 
 export type IHono = Context<{ Bindings: Env }>;

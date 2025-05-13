@@ -4,18 +4,17 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "drizzle-d1-demo",
+	"name": "d1-demo",
 	"main": "src/main.ts",
 	"compatibility_date": "2025-05-10",
 	"observability": {
 		"enabled": true
 	},
 	"d1_databases": [
-		{
-			"binding": "drizzleDemo",
-			"database_name": "drizzle-d1-demo",
-			"database_id": "970701f4-8338-4ce6-a03e-092e96daae06",
-			"migrations_dir": "migrations"
+    {
+      "binding": "DB",
+      "database_name": "d1-demo",
+      "database_id": "547ef50d-8048-43f8-a371-b99273933a8d"
 		}
 	]
 	/**

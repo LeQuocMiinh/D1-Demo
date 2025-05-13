@@ -7,12 +7,12 @@ import { updateUserHanlder } from '../modules/commands/update-user-handler';
 import { listUsersQuery } from '../modules/queries/list-user.query';
 import { ROUTES } from '../route';
 
-const drizzleDemoRoute = new Hono();
+const d1DemoRoute = new Hono();
 
-drizzleDemoRoute.get(ROUTES.ListUsers, listUsersQuery);
-drizzleDemoRoute.post(ROUTES.CreateUser, createUserHandler);
-drizzleDemoRoute.put(ROUTES.UpdateUser, updateUserHanlder);
-drizzleDemoRoute.delete(ROUTES.DeleteAllUsers, deleteAllUsers);
-drizzleDemoRoute.delete(ROUTES.DeleteOneUser, deleteOneUserHandler);
+d1DemoRoute.get(ROUTES.ListUsers, listUsersQuery);
+d1DemoRoute.post(ROUTES.CreateUser, createUserHandler);
+d1DemoRoute.put(ROUTES.UpdateUser, updateUserHanlder);
+d1DemoRoute.delete(ROUTES.DeleteAllUsers, deleteAllUsers);
+d1DemoRoute.delete(ROUTES.DeleteOneUser, deleteOneUserHandler);
 
-export default drizzleDemoRoute;
+export default d1DemoRoute;

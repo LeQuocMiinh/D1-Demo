@@ -16,7 +16,7 @@
 ---
 ## **Step 3: Create database**
   ```bash
-  wrangler d1 create drizzle-d1-demo
+  wrangler d1 create d1-demo
   ```
   ***Note: After create database, you should update `wrangler.jsonc`:*** 
   ```json
@@ -24,26 +24,28 @@
 		"binding": "<your binding env>",
 		"database_name": "<database name>",
 		"database_id": "<your database id generated>",
-		"migrations_dir": "<folder miragtions>"
 	}
   ```
 ---
-## **Step 4: Create file `drizzle.config.ts`**
-  ```ts
-    import type { Config } from 'drizzle-kit';
-
-    export default {
-      schema: './src/stores/schemas', // your schemas 
-      out: './migrations', // folder miragtions
-      dialect: 'sqlite', // requirment
-      driver: 'd1-http', // if use d1, can change it if use an other database
-      dbCredentials: {
-        accountId: '<your account id>', // your account Id on Cloudflare workers
-        databaseId: '<your database id on step 3>', // your database id generated of step 3
-        token: '<your token>', // your token on Cloudflare workers (config into profile)
-      },
-    } satisfies Config;
-  ```
+## **Step 4: Create table**
+  - Local: 
+    ```bash
+    wrangler d1 execute d1-demo --command "
+      CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        age INTEGER
+      );" --local
+    ```
+  - Production: 
+    ```bash
+    wrangler d1 execute d1-demo --command "
+      CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        age INTEGER
+      );" --remote
+    ```
 ---
 
 ## **Step 5: Follow with these commands**
@@ -52,16 +54,7 @@
    ```bash
    pnpm i
    ```
-2. **Create table, miragtion:**
-    - Create table: 
-      ```bash
-      pnpm load:db
-      ```
-    - Miragtion: 
-      ```bash
-      pnpm miragte:db
-      ```
-3. **Start apps:**
+2. **Start apps:**
     - For development:
       ```bash
       pnpm start:dev
@@ -70,9 +63,9 @@
       ```bash
       pnpm start:local
       ```
-4. **Deploy app:**
+3. **Deploy app:**
    ```bash
-   pnpm deploy:drizzle
+   pnpm deploy:d1-demo
    ```
 ---
 

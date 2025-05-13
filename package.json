@@ -6,12 +6,10 @@
   "scripts": {
     "common": "pnpm --filter @packages/common",
     "packages:build": "pnpm run common build",
-    "drizzle": "pnmpm --filter @apps/drizzle-d1-demo",
-    "load:db": "pnpm run drizzle run load:db",
-    "miragte:db": "pnpm run drizzle run miragte:db",
-    "start:dev": "pnpm run drizzle run dev",
-    "start:local": "pnpm run drizzle run local",
-    "deploy:drizzle": "pnpm run drizzle run deploy"
+    "d1-demo": "pnmpm --filter @apps/d1-demo",
+    "start:dev": "pnpm run d1-demo run dev",
+    "start:local": "pnpm run d1-demo run local",
+    "deploy:d1-demo": "pnpm run d1-demo run deploy"
   },
   "keywords": [],
   "author": "",

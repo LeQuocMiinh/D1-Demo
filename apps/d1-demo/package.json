@@ -5,10 +5,6 @@
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "tsc-watch --onSuccess \"wrangler dev --remote\"",
-		"local": "tsc-watch --onSuccess \"wrangler dev\"",
-		"load:db": "drizzle-kit push",
-		"migrate:db": "drizzle-kit generate",
-		"preload": "node dist/stores/yaml/preload-config.js",
 		"start": "wrangler dev",
 		"test": "vitest",
 		"cf-typegen": "wrangler types"
